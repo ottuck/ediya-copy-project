@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
+
+/* 헤더 메뉴 */
+.full-header{
+position: fixed;
+z-index: 1;
+width: 100%;
+display: block;
+top: 0;
+left: 0;
+}
+
+
+
+.blue-header{
+background-color: rgb(46, 46, 148); 
+display: flex;
+height: 35pt;
+justify-content: space-between;
+}
+
+.blue-header div{
+display: flex;
+
+}  
+
+#leftthside div{
+  font-size: 9pt;
+  display: inline-block;
+  width: 65pt;
+  color:white;
+  line-height: 3.5em;
+  text-align: center;
+  background: url(image/흰\ 칸.gif) left no-repeat;
+  
+}
+#rightside{
+  display: inline-block;
+}
+
+
+
+
+#rightside div li {
+background: url(image/흰\ 칸.gif) right no-repeat;
+color: white;
+line-height: 4em;
+font-size: 9pt;
+text-align: center;
+}
+
+
+/* sns 링크 */
+#snslink{
+  display: flex;
+  line-height: 3.5em;
+  padding-left: 20pt;
+  width: 100pt;
+}
+
+
+
+.search{
+  
+  position: relative;
+  text-align: right;
+  line-height: 2.5em;
+  
+  }
+
+
+
+
+#logo{
+padding: 20pt;
+text-align: center;
+background-color: white;
+}
+
+.white-header{
+background-color: white;
+bottom: 1px solid gray;
+display: flex;
+height: 30pt;
+justify-content: center;
+}
+.white-header div{
+width: 100pt;
+text-align: center;
+line-height: 2em;
+} 
+
+
+
+
+
+
+
+
+
+/* 전체 */
+
+.container {
+  border: 1px;
+  height: 3000px;
+  word-break: keep-all;
+  padding-top: 90px; 
+  position: relative;
+}
+
+.snack-visual {
+  border: 1px solid white;
+  background-image: url(image/snack_visual.jpg);
+  background-size: cover;
+  padding-top: 100pt;
+  width: 100%;
+  height: 200pt;
+  text-align: center;
+  z-index: 2;
+}
+.snack-visual p {
+  font-size: 30pt;
+}
+
+
+.coffee {
+  position: relative;
+}
+.coffee ul {
+  position: absolute;
+  font-size: 0;
+  width: 80%;
+  display: flex;
+  bottom: 35pt;
+  justify-content: center;
+  padding-left: 123pt;
+ 
+}
+
+.coffee ul li {
+  border: 1px solid gray;
+  color: gray; 
+  font-size: 10pt;
+  line-height: 3em;
+  height: 30pt;
+  width: 150pt;
+  text-align: center;
+}
+
+.coffee ul li:hover{
+background-color: #898989;
+color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 로케이션 */
+
+.location {
+  display: block;
+    max-width: 1180px;
+    text-align: right;
+    margin: 0 auto;
+    padding-top: 38px;
+    color: #898989;
+    font-size: 12px;
+}  
+
+
+
+.location span {
+  background: url(image/icon_loc.png) right no-repeat;
+  padding-right: 10px;
+  font-size: 1pt;
+  margin : 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 상담전화 */
+
+.section1{
+  width: 92%;
+  max-width: 1180px;
+  margin: auto;
+}
+/* 전화 안내 */
+.call-center{
+
+  
+}
+
+.call-center p {
+margin-top: 20pt;
+margin-bottom: 20pt;
+display: block;
+}
+
+
+.call-center ul{
+  border: 1px solid skyblue;
+  display: flex;  
+  
+}
+.call-center ul li{
+  display: table;
+  width: 500pt;
+  height: 100pt;
+
+}
+.call-center ul li span{
+display: table-cell;
+  text-align: center;
+vertical-align: middle;
+}
+.call-center ul li p1{
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/* 거래안내 1 */
+
+.agree-title {
+  font-size: 9pt;
+  padding-top: 10pt;
+}
+
+
+
+.agree-title h1 {  
+  font-weight: lighter;
+  padding-top: 30px;
+}
+
+em {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.agree-box {
+  border: 1px solid grey;
+  height: 140px;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: rgb(228, 228, 228);
+  max-width: 1000pt;  
+}
+.agree-box em {
+  color: red;
+}
+.agree-box p {
+  font-size: 5pt;
+}
+.agree-check {
+  font-size: 3pt;
+  margin: 10pt;
+}
+
+/*신청자 정보 */
+
+
+.appli-info{
+  margin-top: 30pt;
+}
+.appli-info-title h4{
+  
+}
+
+
+/* 상담 신청자 정보 작성 박스 */
+table{
+  width: 100%;
+  display: flex;
+}
+
+
+  table th{
+    border: 1px solid black;
+    background-color: rgb(228, 228, 228);
+    display: table;
+    width: 18.5%;
+    max-width: 200pt;
+    min-width: 200pt;
+    height: 30pt;
+  }
+  
+
+  table tr th label{
+  background: url(image/ck_icon.png) left no-repeat;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 20pt;
+  }
+
+
+  table td{
+    display: table-cell;
+    vertical-align: inherit;
+    border: 1px solid black;
+    height: 30pt;
+    width: 1000pt 
+}
+  talbe td dt{
+    display: block;
+    text-align: right;
+
+  }
+
+    table td select{
+      margin-left: 10pt;
+      height: 20pt;
+      min-width: none;
+      max-width: 150pt;
+    }
+
+    table td input{
+      height: 20pt;
+    }
+          
+
+/* 상담 내용 */
+.contents {
+}
+.contents-title {
+  padding-top: 20pt;
+  padding-bottom: 10pt;
+} 
+.country select{
+  width: 80%;
+}
+
+
+
+.choice{
+  text-align: center;
+  height: 400pt;
+}
+
+#checkthecoffee dl{
+  display: block; 
+  margin-bottom: 20pt;
+  border-bottom: 1px black;
+}
+
+#checkthecoffee dl dt{
+  display: flex;
+}
+
+.seperate dt{
+  padding-left: 10pt;
+
+
+}
+#gubun{
+width: 33%;
+
+}
+
+
+
+.substance td textarea{
+  padding: 10px;
+  margin: 15pt;     
+}
+
+.substance th{
+  height: 300pt;
+}
+
+.substance td textarea{
+  width: 90%;
+  height: 90%;
+  border: 1px solid #030202;
+
+}
+
+
+
+/* footer */
+footer{
+  position: relative;
+  clear: both;
+  width: 100%;
+  background: black;
+  text-align: center;
+  height: 200pt;
+
+}
+
+
+.bottomFirst{
+  border-bottom: solid 1px #464646;
+  padding: 16px 0;
+  
+
+}
+.bottomFirst li{
+
+  display: inline-block;
+  border: 1px solid black ;
+}
+.bottomFirst li span{
+  color: white;
+  padding: 15pt;
+}
+
+
+.bottomMiddle span{
+position: absolute;
+padding-left: 350pt;
+}
+.bottomlogo{
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+
+}
+.copy_info span{
+  color:white;
+  display: inline-block;
+}
+.copy{
+  margin-top: 10pt;
+  color: white;
+}
