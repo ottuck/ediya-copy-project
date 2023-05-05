@@ -1,7 +1,8 @@
+/*@media screen and (max-width: 768px){*/
 /*공통 CSS*/
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
     text-decoration: none;
     color: black;
@@ -9,12 +10,6 @@
 }
 
 /*헤더*/
-/*모바일일때는 fix를 제거*/
-@media screen and (min-width: 768px){
-    .top-nav-fixed{
-        position: fixed;
-    }
-}
 .top-nav-fixed {
     background-color: white;
     width: 100%;
@@ -23,20 +18,20 @@
     z-index: 10;
     display: flex;
     justify-content: center;
+    position: fixed;
 }
-.top-nav-fixed > .top-nav-bg{
-    display: none;
-    background-color: white;
-    height: 400px;
+/*fixed 속성이 뒷 배경 안 먹게 header-bg배치*/
+.header-bg{
+    display: inline-block;
+    padding-top: 120px;
 }
 
 header {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    display: flex;
 }
-header > .header-logo {
+.header-logo {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -47,6 +42,7 @@ header > .header-logo {
     display: flex;
     justify-content: space-around;
     margin: 50px;
+    box-sizing: border-box;
 }
 .main-menu > li {
     width: 100%;
@@ -59,26 +55,20 @@ header > .header-logo {
     font-size: 13px;
     color: #7d7d7e;
 }
-nav > .main-menu > li{
-    position: relative;
-}
-/*메뉴 아래 검은 바 효과 수정 필요*/
-.main-news{
-    position: relative;
-}
-/*nav > .main-menu > li > a:before */
-.main-news > h2::before{
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    content: "";
-    transition: width .4s ease;
-    transform: translate(-50%,-50%);
-    background-color: #000;
-    z-index: 10;
-}
+
+/*메인 메뉴 밑줄 효과 작업중*/
+/*.main-menu > span{*/
+/*    position: absolute;*/
+/*    bottom: -5px;*/
+/*    left: 50%;*/
+/*    width: 0;*/
+/*    height: 3px;*/
+/*    content: "";*/
+/*    transition: width .4s ease;*/
+/*    transform: translate(-50%,-50%);*/
+/*    background-color: #000;*/
+/*    z-index: 10;*/
+/*}*/
 
 .sub-menu{
     display: none;
@@ -99,55 +89,44 @@ nav > .main-menu > li{
 /*1번 펙토리 배너*/
 .factory-banner {
     position: relative;
-    /*background-color: #043170;*/
     background-image: linear-gradient(90deg, #1c3269, #05519d);
-    height: 450px;
-    text-align: left;
+    height: 500px;
     overflow: hidden;
 }
-/*@media screen and (min-width: 768px){*/
-/*    #factory_txt{*/
-/*        width: 50%;*/
-/*        height: 74px;*/
-/*        margin-top: 90px;*/
-/*    }*/
-/*}*/
 
-.factory-banner > .factory-contents > #factory_txt {
-    /*width: 880px;*/
-    width: 30%;
-    /*height: 74px;*/
+#factory_txt {
+    width: 70%;
     margin-top: 90px;
 }
 
-.factory-banner > .factory-img {
+.factory-img {
     position: absolute;
     top: 30%;
     left: 40%;
 }
 
-.factory-banner > .factory-contents {
+.factory-contents {
     width: 80%;
     margin: auto;
 }
 
-.factory-banner > .factory-contents > h2 {
+.factory-contents > h2 {
     font-size: 30px;
     color: white;
     margin: 10px 0 10px 0;
 }
 
-.factory-banner > .factory-contents > p {
+.factory-contents > p {
     font-size: 17px;
     color: white;
     margin-top: 7px;
 }
 
-.factory-banner > .factory-contents > .factory-banner-button {
+.factory-banner-button {
     margin: 36px 0 36px 0;
 }
 
-.factory-banner > .factory-contents > .factory-banner-button > a {
+.factory-banner-button > a {
     display: inline-block;
     width: 190px;
     height: 44px;
@@ -159,7 +138,7 @@ nav > .main-menu > li{
     cursor: pointer;
 }
 
-.factory-banner > .factory-contents > .factory-banner-button > a:hover {
+.factory-banner-button > a:hover {
     background-color: white;
     color: black;
 }
@@ -169,7 +148,6 @@ nav > .main-menu > li{
 .menu-banner {
     background: url("img/menu_banner.jpeg") no-repeat;
     background-size: cover;
-    width: 100%;
     height: 500px;
 }
 
@@ -180,7 +158,6 @@ nav > .main-menu > li{
     color: white;
     font-family: sans-serif;
     padding-top: 112px;
-    position: relative;
 }
 
 .menu-banner > h3 {
@@ -201,12 +178,12 @@ nav > .main-menu > li{
     padding: 0 40px;
 }
 
-.menu-banner > .go-menu-btn {
+.go-menu-btn {
     display: flex;
     justify-content: center;
 }
 
-.menu-banner > .go-menu-btn > a {
+.go-menu-btn > a {
     display: inline-block;
     width: 190px;
     height: 44px;
@@ -217,7 +194,7 @@ nav > .main-menu > li{
     letter-spacing: 0.1em;
 }
 
-.menu-banner > .go-menu-btn > a:hover {
+.go-menu-btn > a:hover {
     background-color: white;
     color: black;
     cursor: pointer;
@@ -227,16 +204,15 @@ nav > .main-menu > li{
 /*3번 컴패니 배너*/
 .company-banner {
     background: url("img/company_bg.jpg") no-repeat;
-    height: 450px;
-    text-align: left;
+    background-size: cover;
+    height: 400px;
+    /*padding-bottom: 55px;*/
 }
 
-.company-banner > .company-contents {
-    position: relative;
-    left: 50%;
-    width: 600px;
+.company-contents {
+    float: right;
 }
-.company-banner > .company-contents > h2 {
+.company-contents > h2 {
     font-size: 44px;
     font-family: sans-serif;
     font-weight: 100;
@@ -244,17 +220,17 @@ nav > .main-menu > li{
     padding-top: 87px;
 }
 
-.company-banner > .company-contents > p {
+.company-contents > p {
     font-size: 17px;
     color: white;
     margin-top: 17px;
 }
 
-.company-banner > .company-contents > .company-banner-button {
-    margin: 36px 0 36px 0;
+.company-banner-button {
+    margin: 36px;
 }
 
-.company-banner > .company-contents > .company-banner-button > a {
+.company-banner-button > a {
     display: inline-block;
     width: 190px;
     height: 44px;
@@ -265,190 +241,192 @@ nav > .main-menu > li{
     letter-spacing: 0.1em;
 }
 
-.company-banner > .company-contents > .company-banner-button > a:hover {
+.company-banner-button > a:hover {
     background-color: white;
     color: black;
     cursor: pointer;
 }
 
 /*메인 바텀 (브로슈어)*/
-/*PC사이즈 적용*/
-@media screen and (min-width: 768px) {
+.main-bottom1 {
+    background: url("img/main_bottom1.jpeg") no-repeat;
+    background-size: cover;
+    /*float: left;*/
+    padding: 60px 50px;
+}
+
+.main-bottom p {
+    font-size: 17px;
+    color: white;
+    padding-top: 27px;
+    /*display: none;*/
+}
+
+.main-bottom2 {
+    background: url("img/main_bottom2.jpeg") no-repeat;
+    background-size: cover;
+    /*float: left;*/
+    padding: 30px 50px;
+}
+
+.main-bottom2 > form > input {
+    width: 100%;
+    height: 44px;
+    padding-left: 20px;
+    margin-top: 35px;
+    border: solid 3px white;
+    background-color: #1c3269;
+    font-size: 14px;
+    color: white;
+}
+
+.main-bottom2 > form {
+    position: relative;
+}
+
+.main-bottom2 > form > #search-icon {
+    position: absolute;
+    right: 3%;
+    top: 45px;
+    filter: invert(100%);
+}
+
+::placeholder {
+    color: white;
+}
+
+.main-news{
+    padding: 30px 50px;
+}
+
+.main-bottom3 > .main-news > span {
+    display: block;
+    float: right;
+    color: #a4a4a5;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.main-bottom3 > .main-news > ul > li {
+    margin-top: 15px;
+    color: #7d7d7e;
+}
+
+.main-bottom3 > .main-news > ul > li > span {
+    display: block;
+    float: right;
+    color: #a4a4a5;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.main-bottom h2 {
+    font-weight: 600;
+    color: white;
+}
+
+.main-news > h2 {
+    color: black;
+    display: inline-block;
+}
+
+.main-ad {
+    height: 135px;
+    background-color: #cbc3b2;
+    bottom: 0;
+    position: relative;
+}
+
+.main-ad > h2 {
+    margin: 0;
+    padding: 35px 0 35px 25px;
+}
+
+.main-ad > img {
+    position: absolute;
+    top: -26px;
+    right: 16px;
+}
+
+
+/*!*모바일 사이즈(768px이하)*!*/
+@media screen and (min-width: 769px) {
     .main-bottom > .inner {
         background-color: #efefef;
         padding: 100px 100px 0 100px;
         overflow: hidden;
         /*자식요소에 float속성이 있으면 부모요소는 height값을 잃기 때문에 overflow:hidden 적용*/
     }
-
-    .main-bottom > .inner > .main-bottom1 {
-        background: url("img/main_bottom1.jpeg") no-repeat;
-        background-size: cover;
+    .main-bottom1{
         float: left;
         width: 28%;
         height: 330px;
         margin-right: 1%;
-        padding: 44px 35px 0 35px;
     }
-
-    .main-bottom > .inner > .main-bottom1 > a {
-        position: absolute;
-    }
-
-    .main-bottom h2 {
-        font-weight: 600;
-        color: white;
-        margin-top: 23px;
-    }
-
-    .main-bottom p {
-        font-size: 17px;
-        color: white;
-        padding-top: 27px;
-    }
-
-    .main-bottom > .inner > .main-bottom2 {
-        background: url("img/main_bottom2.jpeg") no-repeat;
-        background-size: cover;
+    .main-bottom2{
         float: left;
         width: 28%;
         height: 330px;
         margin-right: 1%;
-        padding: 44px 35px 0 35px;
     }
 
-    .main-bottom > .inner > .main-bottom2 > form > input {
-        width: 100%;
-        height: 44px;
-        padding-left: 20px;
-        margin-top: 35px;
-        border: solid 3px white;
-        background-color: #1c3269;
-        font-size: 14px;
-        color: white;
-    }
-
-    .main-bottom > .inner > .main-bottom2 > form {
-        position: relative;
-    }
-
-    .main-bottom > .inner > .main-bottom2 > form > #search-icon {
-        position: absolute;
-        right: 3%;
-        top: 45px;
-        filter: invert(100%);
-    }
-
-    ::placeholder {
-        color: white;
-    }
-
-    .main-bottom > .inner > .main-bottom3 {
-        width: 20%;
-        height: 330px;
+    .main-bottom3{
         float: left;
     }
-
-    .main-bottom > .inner > .main-bottom3 > .main-news {
+    .main-news {
         width: 480px;
         height: 195px;
-        padding: 0 15px;
     }
-
-    .main-bottom > .inner > .main-bottom3 > .main-news > span {
-        display: block;
-        float: right;
-        color: #a4a4a5;
-        font-size: 13px;
-        margin-top: 4px;
-    }
-
-    .main-bottom > .inner > .main-bottom3 > .main-news > h2 {
-        color: black;
-        display: inline;
-    }
-
-    .main-bottom > .inner > .main-bottom3 > .main-news > ul > li {
-        margin-top: 15px;
-        color: #7d7d7e;
-    }
-
-    .main-bottom > .inner > .main-bottom3 > .main-news > ul > li > span {
-        display: block;
-        float: right;
-        color: #a4a4a5;
-        font-size: 13px;
-        margin-top: 4px;
-    }
-
-    .main-bottom > .inner > .main-bottom3 > .main-ad {
-        width: 500px;
-        height: 135px;
-        background-color: #cbc3b2;
-        bottom: 0;
-        position: relative;
-    }
-
-    .main-bottom > .inner > .main-bottom3 > .main-ad > h2 {
-        margin: 0;
-        padding: 36px 0 35px 24px;
-    }
-
-    .main-bottom > .inner > .main-bottom3 > .main-ad > img {
-        position: absolute;
-        top: -26px;
-        right: 16px;
+    .main-ad > img{
+        display: none;
     }
 }
 
-/*모바일 사이즈(768px이하)*/
-
-
-
 /*footer*/
-    footer {
-        clear: both;
-        background: #262626;
-        text-align: center;
-    }
+footer {
+    clear: both;
+    background: #262626;
+    text-align: center;
+}
 
-    footer a {
-        color: #818181;
-        font-size: 13px;
-    }
+footer a {
+    color: #818181;
+    font-size: 13px;
+}
 
-    footer > .bottom-nav {
-        border-bottom: 1px solid #464646;
-        padding: 16px;
-    }
+.bottom-nav {
+    border-bottom: 1px solid #464646;
+    padding: 16px;
+}
 
-    footer > .bottom-nav li {
-        display: inline-block;
-        margin: 3px 19px;
-    }
+.bottom-nav > li {
+    display: inline-block;
+    margin: 3px 19px;
+}
 
-    footer > .bottom_logo {
-        margin: 41px 0 24px;
-    }
+.bottom_logo {
+    margin: 41px 0 24px;
+}
 
-    footer > .copy_info {
-        width: 90%;
-        max-width: 650px;
-        margin: 14px auto;
-    }
+.copy_info {
+    width: 90%;
+    max-width: 650px;
+    margin: 14px auto;
+}
 
-    footer > .copy_info > span {
-        display: inline-block;
-        margin-right: 10px;
-        padding-right: 10px;
-        color: #6c6c6c;
-        font-size: 12px;
-    }
+.copy_info > span {
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    color: #6c6c6c;
+    font-size: 12px;
+}
 
-    footer > .copy {
-        padding-bottom: 35px;
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        color: #6c6c6c;
-    }
+.copy {
+    padding-bottom: 35px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6c6c6c;
+}
+
